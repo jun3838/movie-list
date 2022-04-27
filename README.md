@@ -6,4 +6,13 @@ As you can see from the folder structure, assets hold all assets related file li
 
 I also took the initiative to add search functionality to filter out product base on the search keyword, very simple approach, just to demonstrate how we could easily do searching from product list with vue reactivity.
 
+To run the site:
+```
+npm i
+```
+and then
+```
+npm run dev
+```
+
 Last but not least, I hope it meets the requirement needed for this assignment and looking forward to hear from you about my approach for this assignment.
