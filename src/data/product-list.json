@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "image": "product1.jpg",
+    "name": "Xbox controller",
+    "seller": "random author"
+  },
+  {
+    "id": 2,
+    "image": "product2.jpg",
+    "name": "X Brand Headphone",
+    "seller": "random author"
+  },
+  {
+    "id": 3,
+    "image": "product3.jpg",
+    "name": "iPhone 11 case",
+    "seller": "random author"
+  },
+  {
+    "id": 4,
+    "image": "product4.jpg",
+    "name": "Vintage Camera",
+    "seller": "random author"
+  },
+  {
+    "id": 5,
+    "image": "product5.jpg",
+    "name": "Toy Car",
+    "seller": "random author"
+  },
+  {
+    "id": 6,
+    "image": "product6.jpg",
+    "name": "Amazon Speaker",
+    "seller": "random author"
+  },
+  {
+    "id": 7,
+    "image": "product7.jpg",
+    "name": "Sneaker",
+    "seller": "random author"
+  },
+  {
+    "id": 8,
+    "image": "product8.jpg",
+    "name": "Gameboy Color",
+    "seller": "random author"
+  },
+  {
+    "id": 9,
+    "image": "product9.jpg",
+    "name": "Smart Watch",
+    "seller": "random author"
+  },
+  {
+    "id": 10,
+    "image": "product10.jpg",
+    "name": "Nike Sneaker",
+    "seller": "random author"
+  },
+  {
+    "id": 11,
+    "image": "product11.jpg",
+    "name": "iPhone X",
+    "seller": "random author"
+  },
+  {
+    "id": 12,
+    "image": "product12.jpg",
+    "name": "DJI Drone",
+    "seller": "random author"
+  },
+  {
+    "id": 13,
+    "image": "product13.jpg",
+    "name": "Vintage Camera Black",
+    "seller": "random author"
+  },
+  {
+    "id": 14,
+    "image": "product14.jpg",
+    "name": "Toy Car Black",
+    "seller": "random author"
+  },
+  {
+    "id": 15,
+    "image": "product15.jpg",
+    "name": "Smart Watch Black",
+    "seller": "random author"
+  },
+  {
+    "id": 16,
+    "image": "product16.jpg",
+    "name": "Camera Lens",
+    "seller": "random author"
+  },
+  {
+    "id": 17,
+    "image": "product17.jpg",
+    "name": "Coca-cola",
+    "seller": "random author"
+  },
+  {
+    "id": 18,
+    "image": "product18.jpg",
+    "name": "DSLR Camera",
+    "seller": "random author"
+  }
+]
