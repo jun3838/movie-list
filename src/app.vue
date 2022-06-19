@@ -1,8 +1,8 @@
 <script lang="ts">
 // components
 import Sprite from './components/sprite.vue'
-import SearchBar from './components/search-bar.vue'
-import MenuList from './components/menu-list.vue'
+import SearchBar from './components/search-bar/index.vue'
+import MenuList from './components/menu-list/index.vue'
 
 export default {
   components: {

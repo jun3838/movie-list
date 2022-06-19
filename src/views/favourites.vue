@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 // component
-import MovieItem from '../components/movie-item.vue'
+import MovieItem from '../components/movie-item/index.vue'
 
 // helper
 import { toggleFavourite } from '../helper'
@@ -28,7 +28,7 @@ export default {
 </script>
 <template>
   <p class="text-3xl font-bold">Favourites</p>
-  <div class="grid grid-cols-5 gap-4 overflow-scroll mt-3">
+  <div class="grid grid-cols-5 gap-4 mt-3">
     <movie-item
       v-for="(favourite, idx) in favourites"
       :key="`movie-${idx + 1}`"

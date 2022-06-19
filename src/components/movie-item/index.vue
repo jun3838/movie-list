@@ -2,7 +2,7 @@
 import { PropType } from 'vue'
 
 // type
-import type { Favourite } from '../types'
+import type { Favourite } from '../../types'
 export default {
   props: {
     title: {
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 <template>
-  <div class="thumbnail relative flex flex-col p-3 rounded-md hover:bg-gray-100 cursor-pointer">
+  <div class="thumbnail relative rounded-md flex flex-col p-3 rounded-md hover:bg-gray-100 cursor-pointer">
     <span class="title text-lg font-medium">{{ title }}</span>
     <span class="year text-sm text-zinc-500">Year: {{ year }}</span>
     <span class="imdb-id text-xs text-gray-400">imdb ID: {{ imdbId }}</span>
@@ -46,4 +46,13 @@ export default {
     </svg>
   </div>
 </template>
+<style lang="scss" scoped>
+.thumbnail {
+  border: 1px solid rgb(212, 210, 210);
 
+  &:hover {
+    transition: transform .4s ease;
+    transform: scale(1.04);
+  }
+}
+</style>

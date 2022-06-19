@@ -6,9 +6,9 @@ import type { UnwrapRef, Ref } from 'vue'
 import { fetchMovie, MovieResponse } from '../network/movie'
 
 // components
-import Pagination from '../components/pagination.vue'
-import MovieItem from '../components/movie-item.vue'
-import SearchBar from '../components/search-bar.vue'
+import Pagination from '../components/pagination/index.vue'
+import MovieItem from '../components/movie-item/index.vue'
+import SearchBar from '../components/search-bar/index.vue'
 
 // helper
 import { toggleFavourite } from '../helper'
@@ -116,7 +116,7 @@ export default {
     <div v-if="movies.length === 0">
       Your search <span class="italic font-bold">{{ searchValue }}</span> did not match any movie
     </div>
-    <div class="movie-container grid grid-cols-5 gap-4 overflow-scroll mt-3">
+    <div class="movie-container grid grid-cols-5 gap-4 mt-3">
       <movie-item
         v-for="(movie, idx) in movies"
         :key="`movie-${idx + 1}`"
