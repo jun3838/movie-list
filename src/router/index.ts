@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Results from '../views/results.vue'
-import Favourites from '../views/favourites.vue'
+import Results from '../views/results/index.vue'
+import Favourites from '../views/favourites/index.vue'
 
 const routes = [
   {

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render movie item correctly with favourite 1`] = `
+"<div class=\\"thumbnail relative rounded-md flex flex-col p-3 rounded-md hover:bg-gray-100 cursor-pointer\\"><span class=\\"title text-lg font-medium\\">Avatar</span><span class=\\"year text-sm text-zinc-500\\">Year: 2000</span><span class=\\"imdb-id text-xs text-gray-400\\">imdb ID: abc123</span><svg class=\\"icon w-6 h-6 absolute right-2 bottom-2\\">
+    <use xlink:href=\\"#heart-fill\\"></use>
+  </svg></div>"
+`;
+
+exports[`should render movie item correctly without favourite 1`] = `
+"<div class=\\"thumbnail relative rounded-md flex flex-col p-3 rounded-md hover:bg-gray-100 cursor-pointer\\"><span class=\\"title text-lg font-medium\\">Avatar</span><span class=\\"year text-sm text-zinc-500\\">Year: 2000</span><span class=\\"imdb-id text-xs text-gray-400\\">imdb ID: abc123</span><svg class=\\"icon w-6 h-6 absolute right-2 bottom-2\\">
+    <use xlink:href=\\"#heart\\"></use>
+  </svg></div>"
+`;

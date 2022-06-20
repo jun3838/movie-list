@@ -15,7 +15,8 @@
     "typeRoots": [
       "./node_modules/@types",
       "./src/typings/modules"
-    ]
+    ],
+    "types": ["vitest/globals"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

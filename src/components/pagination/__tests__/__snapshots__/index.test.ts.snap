@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render pagination correctly with less than maxVisibleButton 1`] = `
+"<ul class=\\"flex\\">
+  <li class=\\"pagination-button first disabled\\"> &lt;&lt; </li>
+  <li class=\\"pagination-button prev disabled\\"> &lt; </li>
+  <li class=\\"active pagination-button page\\">1</li>
+  <li class=\\"pagination-button page\\">2</li>
+  <li class=\\"pagination-button page\\">3</li>
+  <li class=\\"pagination-button page\\">4</li>
+  <li class=\\"pagination-button next\\"> &gt; </li>
+  <li class=\\"pagination-button last\\"> &gt;&gt; </li>
+</ul>"
+`;
+
+exports[`should render pagination correctly with more than maxVisibleButton 1`] = `
+"<ul class=\\"flex\\">
+  <li class=\\"pagination-button first disabled\\"> &lt;&lt; </li>
+  <li class=\\"pagination-button prev disabled\\"> &lt; </li>
+  <li class=\\"active pagination-button page\\">1</li>
+  <li class=\\"pagination-button page\\">2</li>
+  <li class=\\"pagination-button page\\">3</li>
+  <li class=\\"pagination-button page\\">4</li>
+  <li class=\\"pagination-button page\\">5</li>
+  <li class=\\"pagination-button next\\"> &gt; </li>
+  <li class=\\"pagination-button last\\"> &gt;&gt; </li>
+</ul>"
+`;

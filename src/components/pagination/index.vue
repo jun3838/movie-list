@@ -13,7 +13,7 @@ export default {
     }
   },
   setup (props) {
-    const maxVisiblePage = 5
+    const maxVisibleButton = 5
     const startPage = computed(() => {
       return props.currentPage > 2
         ? props.currentPage - 2
@@ -22,7 +22,7 @@ export default {
           : 1
     })
     const endPage = computed(() => {
-      return Math.min(startPage.value + maxVisiblePage - 1, props.totalPages)
+      return Math.min(startPage.value + maxVisibleButton - 1, props.totalPages)
     })
     const isFirstPage = computed(() => {
       return props.currentPage === 1
@@ -31,18 +31,17 @@ export default {
       return props.currentPage === props.totalPages
     })
     const pages = computed(() => {
-      let range: { number: number; isDisabled: boolean}[] = []
+      let range: number[] = []
       for (let i = startPage.value; i <= endPage.value; i++) {
-        range.push({
-          number: i,
-          isDisabled: i === props.currentPage
-        })
+        range.push(i)
       }
       return range
     })
 
     return {
       pages,
+      startPage,
+      endPage,
       isFirstPage,
       isLastPage
     }
@@ -52,7 +51,7 @@ export default {
 <template>
   <ul class="flex">
     <li
-      class="pagination-button prev"
+      class="pagination-button first"
       :class="{ disabled: isFirstPage }"
       @click="$emit('goto', 1)">
       &#60;&#60;
@@ -66,10 +65,10 @@ export default {
     <li
       v-for="(page, idx) in pages"
       :key="idx"
-      :class="{ active: currentPage === page.number}"
-      class="pagination-button"
-      @click="$emit('goto', page.number)">
-      {{ page.number }}
+      :class="{ active: currentPage === page}"
+      class="pagination-button page"
+      @click="$emit('goto', page)">
+      {{ page }}
     </li>
     <li
       class="pagination-button next"
@@ -78,7 +77,7 @@ export default {
       &#62;
     </li>
     <li
-      class="pagination-button next"
+      class="pagination-button last"
       :class="{ disabled: isLastPage }"
       @click="$emit('goto', totalPages)">
       &#62;&#62;

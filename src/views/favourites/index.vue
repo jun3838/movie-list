@@ -2,13 +2,13 @@
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 // component
-import MovieItem from '../components/movie-item/index.vue'
+import MovieItem from '../../components/movie-item/index.vue'
 
 // helper
-import { toggleFavourite } from '../helper'
+import { toggleFavourite } from '../../helper'
 
 // type
-import type { Favourite } from '../types'
+import type { Favourite } from '../../types'
 
 export default {
   components: {

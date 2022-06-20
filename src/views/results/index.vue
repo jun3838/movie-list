@@ -3,18 +3,18 @@ import { reactive, ref, onMounted, watch } from 'vue'
 import type { UnwrapRef, Ref } from 'vue'
 
 // network
-import { fetchMovie, MovieResponse } from '../network/movie'
+import { fetchMovie, MovieResponse } from '../../network/movie'
 
 // components
-import Pagination from '../components/pagination/index.vue'
-import MovieItem from '../components/movie-item/index.vue'
-import SearchBar from '../components/search-bar/index.vue'
+import Pagination from '../../components/pagination/index.vue'
+import MovieItem from '../../components/movie-item/index.vue'
+import SearchBar from '../../components/search-bar/index.vue'
 
 // helper
-import { toggleFavourite } from '../helper'
+import { toggleFavourite } from '../../helper'
 
 // type
-import type { Favourite } from '../types'
+import type { Favourite } from '../../types'
 
 export default {
   components: {
