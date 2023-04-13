@@ -1,6 +1,6 @@
 <script lang="ts">
 // components
-import { onMounted } from 'vue'
+import { onMounted, computed, ref } from 'vue'
 import Sprite from './components/sprite.vue'
 import SearchBar from './components/search-bar/index.vue'
 import MenuList from './components/menu-list/index.vue'
@@ -34,14 +34,27 @@ export default {
       return false;
     }
 
+    const d = ref()
+
     onMounted(() => {
-      alert(`is Mobile: ${isMobileDevice()}`)
+      alert(`
+      is Mobile: ${isMobileDevice()}
+      touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0}
+      size: ${window.matchMedia("(max-width: 767px)").matches}
+      event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)}
+      `)
+      d.value = screen.orientation
     })
+
+    return {
+      d
+    }
   }
 }
 </script>
 <template>
   <Sprite/>
+  {{ `screen orientation ${JSON.stringify(d)}` }}
   <div class="flex content h-100">
     <div class="sidepanel h-full w-48">
       <menu-list />
