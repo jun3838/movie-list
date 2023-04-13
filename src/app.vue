@@ -37,13 +37,11 @@ export default {
     const d = ref()
 
     onMounted(() => {
-      d.value = `
-      is Mobile: ${isMobileDevice()} <br/>
-      touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0} <br/>
-      size: ${window.matchMedia("(max-width: 1023px)").matches} | ${window.innerWidth} <br/>
-      event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)} <br/>
-      orientation: ${screen.orientation.type}
-      `
+      d.value = `is Mobile: ${isMobileDevice()}
+      touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0}
+        size: ${window.matchMedia("(max-width: 1023px)").matches} | ${window.innerWidth}
+        event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)}
+        orientation: ${screen.orientation.type}`
     })
 
     return {
@@ -56,8 +54,8 @@ export default {
   <Sprite/>
   <div class="flex content h-100">
     <div class="sidepanel h-full w-48">
+      <div style="color: white">{{ d }}</div>
       <menu-list />
-      <div style="color: white" v-html="d" />
     </div>
     <div class="movie-section p-8 overflow-scroll">
       <router-view/>
