@@ -40,7 +40,7 @@ export default {
       d.value = `
       is Mobile: ${isMobileDevice()} <br/>
       touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0} <br/>
-      size: ${window.matchMedia("(max-width: 767px)").matches} | ${window.innerWidth} <br/>
+      size: ${window.matchMedia("(max-width: 1023px)").matches} | ${window.innerWidth} <br/>
       event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)} <br/>
       orientation: ${screen.orientation.type}
       `
