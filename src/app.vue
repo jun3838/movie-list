@@ -1,5 +1,6 @@
 <script lang="ts">
 // components
+import { onMounted } from 'vue'
 import Sprite from './components/sprite.vue'
 import SearchBar from './components/search-bar/index.vue'
 import MenuList from './components/menu-list/index.vue'
@@ -9,6 +10,41 @@ export default {
     Sprite,
     SearchBar,
     MenuList
+  },
+  setup() {
+    function isMobileDevice() {
+      // According to some source, userAgent is not always reliable, e.g. iPads nowadays want to
+      // be treated as desktops and thus send the same UA in Safari as the Desktop Safari
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+      }
+
+      // Check for touch events
+      if (
+        ('ontouchstart' in window || navigator.maxTouchPoints > 0) &&
+        window.matchMedia("(max-width: 767px)").matches &&
+        (window.DeviceOrientationEvent || window.DeviceMotionEvent)
+      ) {
+        return true;
+      }
+
+      // // Check for viewport width
+      // if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) <= 1024) {
+      //   return true;
+      // }
+
+      // // Check for accelerometer or gyroscope support
+      // if (window.DeviceOrientationEvent || window.DeviceMotionEvent) {
+      //   return true;
+      // }
+
+      // Not a mobile browser
+      return false;
+    }
+
+    onMounted(() => {
+      alert(isMobileDevice())
+    })
   }
 }
 </script>
