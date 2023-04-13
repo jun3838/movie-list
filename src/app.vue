@@ -37,14 +37,13 @@ export default {
     const d = ref()
 
     onMounted(() => {
-      alert(`
-      is Mobile: ${isMobileDevice()}
-      touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0}
-      size: ${window.matchMedia("(max-width: 767px)").matches} | ${window.innerWidth}
-      event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)}
+      d.value = `
+      is Mobile: ${isMobileDevice()} <br/>
+      touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0} <br/>
+      size: ${window.matchMedia("(max-width: 767px)").matches} | ${window.innerWidth} <br/>
+      event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)} <br/>
       orientation: ${screen.orientation.type}
-      `)
-      d.value = screen.orientation
+      `
     })
 
     return {
@@ -55,7 +54,7 @@ export default {
 </script>
 <template>
   <Sprite/>
-  {{ `screen orientation ${JSON.stringify(d)}` }}
+  <div v-html="d" />
   <div class="flex content h-100">
     <div class="sidepanel h-full w-48">
       <menu-list />
