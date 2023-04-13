@@ -20,6 +20,8 @@ export default {
       }
 
       // Check for touch events
+      // Check for viewport width
+      // Check for accelerometer or gyroscope support
       if (
         ('ontouchstart' in window || navigator.maxTouchPoints > 0) &&
         window.matchMedia("(max-width: 767px)").matches &&
@@ -28,22 +30,12 @@ export default {
         return true;
       }
 
-      // // Check for viewport width
-      // if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) <= 1024) {
-      //   return true;
-      // }
-
-      // // Check for accelerometer or gyroscope support
-      // if (window.DeviceOrientationEvent || window.DeviceMotionEvent) {
-      //   return true;
-      // }
-
       // Not a mobile browser
       return false;
     }
 
     onMounted(() => {
-      alert(isMobileDevice())
+      alert(`is Mobile: ${isMobileDevice()}`)
     })
   }
 }
