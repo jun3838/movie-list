@@ -24,7 +24,7 @@ export default {
       // Check for accelerometer or gyroscope support
       if (
         ('ontouchstart' in window || navigator.maxTouchPoints > 0) &&
-        window.matchMedia("(max-width: 767px)").matches &&
+        window.matchMedia("(max-width: 1023px)").matches &&
         (window.DeviceOrientationEvent || window.DeviceMotionEvent)
       ) {
         return true;
