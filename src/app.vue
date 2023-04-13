@@ -54,10 +54,10 @@ export default {
 </script>
 <template>
   <Sprite/>
-  <div v-html="d" />
   <div class="flex content h-100">
     <div class="sidepanel h-full w-48">
       <menu-list />
+      <div style="color: white" v-html="d" />
     </div>
     <div class="movie-section p-8 overflow-scroll">
       <router-view/>
