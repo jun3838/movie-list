@@ -11,7 +11,7 @@ import MovieItem from '../../components/movie-item/index.vue'
 import SearchBar from '../../components/search-bar/index.vue'
 
 // helper
-import { toggleFavourite } from '../../helper'
+import { toggleFavourite, isMobileDevice } from '../../helper'
 
 // type
 import type { Favourite } from '../../types'
@@ -23,6 +23,7 @@ export default {
     SearchBar
   },
   setup () {
+    console.log(window.matchMedia("(max-width: 1023px)"))
     // register reactive value
     const movieListResponse: UnwrapRef<MovieResponse>  = reactive({
       page: 0,
@@ -100,7 +101,8 @@ export default {
       nextPage,
       prevPage,
       gotoPage,
-      toggleFavourite
+      toggleFavourite,
+      isMobileDevice
     }
   }
 }
@@ -112,7 +114,7 @@ export default {
   <template v-if="loading">
     loading...
   </template>
-  <template v-else>
+  <template v-else-if="!isMobileDevice()">
     <div v-if="movies.length === 0">
       Your search <span class="italic font-bold">{{ searchValue }}</span> did not match any movie
     </div>
@@ -127,6 +129,9 @@ export default {
         @toggle-favourite="toggleFavourite(favourites, $event)"
       />
     </div>
+  </template>
+  <template v-else>
+      screen too small
   </template>
   <pagination
     v-if="movieListResponse.total > 1"
