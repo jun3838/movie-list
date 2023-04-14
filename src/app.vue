@@ -63,10 +63,10 @@ export default {
   <div class="flex content h-100">
     <div class="sidepanel h-full w-48">
       <h1 style="color: white" v-html="d" />
-      <menu-list v-if="!isMobileDevice()" />
+      <menu-list />
     </div>
     <div class="movie-section p-8 overflow-scroll">
-      <router-view/>
+      <router-view v-if="!isMobileDevice()"/>
     </div>
   </div>
 </template>
