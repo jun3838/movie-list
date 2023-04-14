@@ -52,7 +52,8 @@ export default {
     })
 
     return {
-      d
+      d,
+      isMobileDevice
     }
   }
 }
@@ -62,7 +63,7 @@ export default {
   <div class="flex content h-100">
     <div class="sidepanel h-full w-48">
       <h1 style="color: white" v-html="d" />
-      <menu-list />
+      <menu-list v-if="!isMobileDevice()" />
     </div>
     <div class="movie-section p-8 overflow-scroll">
       <router-view/>
