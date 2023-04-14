@@ -24,9 +24,9 @@ export default {
       // Check for accelerometer or gyroscope support
       if (
         ('ontouchstart' in window || navigator.maxTouchPoints > 0) &&
-        window.matchMedia("(max-width: 1023px)").matches &&
-        (window.DeviceOrientationEvent || window.DeviceMotionEvent)
+        window.matchMedia("(max-width: 1023px)").matches
       ) {
+        console.log(window.matchMedia("(max-width: 1023px)"))
         return true;
       }
 
@@ -34,14 +34,21 @@ export default {
       return false;
     }
 
-    const d = ref()
+    const d = ref(
+      ` is Mobile: ${isMobileDevice()} <br/>
+        touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0} <br/>
+        size: ${window.matchMedia("(max-width: 1023px)").matches} | ${window.innerWidth} <br/>
+        orientation: ${screen.orientation.type} <br/>
+      `
+    )
 
     onMounted(() => {
-      d.value = `is Mobile: ${isMobileDevice()}
-      touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0}
-        size: ${window.matchMedia("(max-width: 1023px)").matches} | ${window.innerWidth}
-        event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)}
-        orientation: ${screen.orientation.type}`
+      isMobileDevice();
+      // d.value = `is Mobile: ${isMobileDevice()}
+      // touch: ${'ontouchstart' in window || navigator.maxTouchPoints > 0}
+      //   size: ${window.matchMedia("(max-width: 1023px)").matches} | ${window.innerWidth}
+      //   event: ${('DeviceOrientationEvent' in window || 'DeviceMotionEvent' in window)}
+      //   orientation: ${screen.orientation.type}`
     })
 
     return {
@@ -54,7 +61,7 @@ export default {
   <Sprite/>
   <div class="flex content h-100">
     <div class="sidepanel h-full w-48">
-      <div style="color: white">{{ d }}</div>
+      <h1 style="color: white" v-html="d" />
       <menu-list />
     </div>
     <div class="movie-section p-8 overflow-scroll">
